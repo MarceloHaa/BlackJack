@@ -1,0 +1,346 @@
+.background {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+    gap: 5px;
+    height: 100%;
+}
+
+.score-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 20px;
+}
+
+.dealer-score-section,
+.player-score-section {
+    display: flex;
+    justify-content: center;
+    width: 45%;
+}
+
+.score-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(30, 30, 30, 0.8);
+    border: 2px solid #46d17d;
+    border-radius: 15px;
+    padding: 10px;
+    box-shadow: 0 8px 26px rgba(46, 213, 116, 0.5);
+    min-width: 150px;
+}
+
+.score-card span {
+    color: #ffffff;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+}
+
+.dealer-score-label,
+.player-score-label {
+    color: #16f36e;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.score-number {
+    font-size: 1.4rem;
+    transition: transform 0.3s ease;
+    animation: pulse 1.5s infinite alternate;
+}
+
+.score-number.dealer {
+    color: #4ecdc4;
+}
+
+.score-number.player {
+    color: #4ecdc4;
+}
+
+.game-board {
+    display: flex;
+    justify-content: space-around;
+    width: 90%;
+    max-width: 1200px;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 10;
+}
+
+.player-section,
+.dealer-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex: 1;
+}
+.victory-counter {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background-color: rgba(30, 30, 30, 0.7);
+    border-radius: 10px;
+    padding: 5px 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.victory-counter .crown-icon {
+    margin-right: 5px;
+}
+
+.victory-counter .victories-count {
+    color: #ffd700;
+    font-weight: bold;
+    font-size: 1rem;
+}
+.victory-number {
+    margin-left: 5px;
+}
+
+.player-victories,
+.dealer-victories {
+    margin-top: 10px;
+    align-self: center;
+}
+.cards {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.button-group {
+    margin-top: 2rem;
+    display: flex;
+    gap: 10rem;
+}
+
+.message-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    pointer-events: none;
+    animation: fadeInOut 3s ease-in-out;
+}
+
+.message {
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.message.winning {
+    color: #46d17d;
+}
+
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -60%);
+    }
+    50% {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+    90% {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -40%);
+    }
+}
+
+@keyframes pulse {
+    from {
+        transform: scale(1.3);
+    }
+    to {
+        transform: scale(1.85);
+    }
+}
+
+@media (max-width: 600px) {
+    .score-card span {
+        padding: 0;
+        font-size: 0.9rem;
+    }
+
+    .dealer-score-label,
+    .player-score-label {
+        font-size: 1rem;
+    }
+
+    .score-number {
+        font-size: 1.2rem;
+    }
+
+    .game-board {
+        width: 95%;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .player-section,
+    .dealer-section {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .cards {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px;
+        margin-top: 5px;
+    }
+
+    .button-group {
+        width: 100%;
+        max-width: 350px;
+        margin: 1rem auto;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0 15px;
+    }
+
+    .button-group button {
+        width: 100%;
+        max-width: 250px;
+        margin: 0.5rem 0;
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+
+    .message-container {
+        width: 90%;
+        max-width: 350px;
+        padding: 15px 20px;
+    }
+
+    .message {
+        font-size: 1.2rem;
+    }
+
+    .victory-counter {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+img,
+video {
+    max-width: 100%;
+    height: auto;
+}
+@media (max-width: 500px) {
+    .container {
+        padding: 0 10px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .score-container {
+        width: 90%;
+        max-width: 90%;
+        flex-direction: row;
+        margin-top: 1rem;
+        align-items: center;
+        gap: 10px;
+        padding: 5px;
+        box-sizing: border-box;
+    }
+
+    .dealer-score-section,
+    .player-score-section {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .score-card {
+        width: 100%;
+        max-width: 200px;
+        box-sizing: border-box;
+        margin: 0 auto;
+    }
+
+    .game-board {
+        width: 100%;
+        max-width: 100%;
+        flex-direction: column;
+        align-items: center;
+        padding: 1px;
+        margin-bottom: 0;
+        box-sizing: border-box;
+    }
+
+    .button-group {
+        width: 100%;
+        max-width: 200px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+        padding: 0 10px;
+        box-sizing: border-box;
+        margin: 10px auto;
+    }
+
+    .button-group button {
+        width: 100%;
+        max-width: 250px;
+        padding: 8px;
+        box-sizing: border-box;
+        margin: 5px 0;
+    }
+
+    .cards {
+        width: 100%;
+        max-width: 350px;
+        justify-content: center;
+        padding: 0 10px;
+        box-sizing: border-box;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
